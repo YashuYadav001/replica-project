@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Replica Dashboard</title>
+  <style>
+  
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      color: #222;
+    }
+
+   
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      background: white;
+      
+      position: sticky;
+      top: 0;
+    }
+
+    .navbar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .navbar-left h2 {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .navbar-right {
+      display: flex;
+      align-items: center;
+      gap: 0px;
+    }
+
+    .circle {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, purple, pink);
+      
+    }
+    .circle2{
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid rgb(220, 219, 219);
+      position: relative;right: 26px;
+      cursor: pointer;
+    }
+    .circle3{
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid rgb(220, 219, 219);
+      position: relative;right: 25px;
+      cursor: pointer;
+    }
+
+
+    .navbar-right{
+        position: absolute;right: 40px;
+        
+
+    }
+
+    
+    .tabs {
+      display: flex;
+      gap: 65px;
+      padding: 10px 20px;
+      border-bottom: 1px solid #eee;
+      background: white;
+    }
+    .tabs a {
+      text-decoration: none;
+      font-size: 14px;
+      color: #666;
+      padding-bottom: 6px;
+    }
+    .tabs a.active {
+      border-bottom: 2px solid black;
+      color: black;
+    }
+
+   
+    .container {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+    }
+
+    
+    .card {
+      background: white;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+      width: 70vh;
+    }
+    .card1 {
+      background: white;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      margin-bottom: 20px;
+      width: 70vh;
+      position: relative;top: 40vh;
+      position: relative;left: -129vh;
+      height: 10vh;
+    }
+
+    .card h3 {
+      font-size: 14px;
+      margin-bottom: 12px;
+      color: #555;
+    }
+
+   
+    
+    .projects {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+    .project-card {
+      background: white;
+      padding: 14px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      position: absolute;top: 35vh;
+      position: absolute;left: 83vh;
+      height: 160px;
+      width: 56vw;
+    }
+    .project-card h4 {
+      margin: 0;
+      font-size: 15px;
+      position: relative;top: -37px;
+      position: relative;left: 65px;
+    }
+    .project-card p {
+      margin: 4px 0 0;
+      font-size: 15px;
+      color: #555;
+      position: relative;top: -37px;
+      position: relative;left: 65px;
+    }
+
+    .project-card p1 {
+      margin: 4px 0 0;
+      font-size: 14px;
+      color: #282626;
+      background-color: #c9c5c5;
+      padding: 3px 3px;
+      border-radius: 30px;
+      gap: 2px;
+      position: relative;top: -20px;
+    }
+
+    .project-card p2 {
+      margin: 4px 0 0;
+      font-size: 13px;
+      color: #555;
+      position: relative;left: -190px;
+      position: relative;top: 20px;
+      
+      
+      font-style: normal;
+      font-weight: bolder;
+      font-size: 20px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    .project-card p3{
+        position: relative;top: 6vh;
+        position: relative;left: -49vh;
+    }
+
+    .slash{
+        color: #c9c5c5;
+        scale: 2;
+    }
+
+    .project-card1 {
+      background: white;
+      padding: 14px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+      position: absolute;top: 65vh;
+      position: absolute;left: 83vh;
+      width: 118vh;
+      height: 20vh;
+    }
+   
+    .project-card1 h4 {
+        position: relative;top: -10vh;
+        position: relative;left: 10vh;
+
+    }
+    .project-card1 h5 {
+        position: relative;top: -13.1vh;
+        position: relative;left: 10vh;
+        font-size: medium;
+        color: #8b8686;
+        font-weight: 300;
+    }
+    .project-card1 p {
+      margin: 4px 0 0;
+      font-size: 13px;
+      color: #555;
+    }
+    
+
+    .Hobby{
+        background-color: #dedbdb;
+        margin: 1px;
+        border-radius: 14px;
+        padding: 4px 8px;
+    }
+
+    .project-card2 {
+      background: white;
+      padding: 14px;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+   
+    .Feedback{
+        border: 2px solid rgb(203, 203, 203);
+        margin: 1px;
+        border-radius: 5px;
+        padding: 4px 8px;
+        position: relative;right: 20px;
+    }
+    .search
+    {
+        position: relative;right: 10px;
+             
+}
+    
+    .iconsearch{
+        position: relative;right: 185px;
+
+    }
+
+    .main
+    {
+        padding-left: 30px;
+        margin-top: 10px;
+        
+        
+    }
+    .filtericon{
+        scale: 0.07;
+        
+        
+        position: absolute;right: 8vw;
+        position: absolute;top: -16.3vh;
+        border: 12px solid #ddd;
+        border-radius: 10vh;
+        cursor: pointer;
+    }
+    .toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+
+.toggle {
+  display: flex;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  position: absolute;right: 25vh;
+  position: absolute;top: 18.7vh;
+}
+.toggle button {
+  background: #fff;
+  border: none;
+  padding: 7px 15px;
+  
+  cursor: pointer;
+  font-size: 18px;
+}
+
+
+
+.dropdown {
+  position: absolute;right: 10px;
+  position: absolute;top: 18.7vh;
+}
+.dropbtn {
+  background: #111;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid #ddd;
+  margin-top: 5px;
+  min-width: 160px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+.dropdown-content a:hover {
+  background: #f5f5f5;
+}
+
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.grid{
+    padding: 12px 18px;
+}
+
+.Upgrade{
+    color: #ffffff;
+    background-color: #111;
+    padding: 5px 5px;
+    border-radius: 5px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+    position: relative;left: -22.4vh;
+    position: relative;top:-268vh;
+    cursor: pointer;
+}
+.Progress{
+    position: relative;left: -270px;
+    position: relative;top: -423px;
+    scale: 0.05;
+    
+
+
+}
+.Progress1{
+    position: relative;left: -270px;
+    position: relative;top: -134vh;
+    scale: 0.05;
+
+
+}
+.Progress2{
+    position: relative;left: -270px;
+    position: relative;top: -210vh;
+    scale: 0.05;
+
+
+}
+
+
+.para{
+    position: relative;left: 50px;
+    
+}
+
+.p1{
+    position: relative;top: -265.9vh;
+    position: relative;left: 54vh;
+   
+
+    
+}
+.p2{
+    position: relative;top: -265.9vh;
+    position: relative;left: 63vh;
+}
+.p3{
+    position: relative;top: -265.0vh;
+    position: relative;left: 64vh;
+    
+    
+
+}
+.para1{
+background-color: #f1eaea;
+    width: 473px;
+    padding: 3px 3px;
+    
+    
+}
+.para2{
+    background-color: #f1eaea;
+    width: 473px;
+    padding: 3px 3px;
+}
+
+.down-arrow{
+    position: relative;top: -264vh;
+    position: relative;left: 36vh;
+    scale: 0.8;
+    border: 2px solid #777;
+    border-radius: 50%;
+}
+
+.eye{
+    scale: 0.2;
+    position: relative;left: 17vh;
+    position: relative;top: -14vh;
+}
+
+.text{
+    position: relative;top: -29.5vh;
+    max-width: 300px;
+    text-align: center;
+    position: relative;left: 100px;}
+    
+.recent{
+    position: relative;top: 40vh;
+    position: relative;left: -128vh;
+}
+.branch{
+    scale: 0.05;
+    position: relative;top: -28vh;
+    position: relative;left: -28vh;
+}
+
+.heart-beart{
+   scale: 0.04;
+    border-radius: 50%;
+    padding: 12px 13px;
+    border-width: 3px;
+    
+    border: 5px solid rgb(26, 23, 23);
+    cursor: pointer;
+    position: relative;top: -352vh;
+    position: relative;left: 123vh;
+}
+.heart-beart2{
+    scale: 0.7;
+    border-radius: 50%;
+    padding: 12px 13px;
+    border-width: 3px;
+    
+    border: 5px solid rgb(26, 23, 23);
+    cursor: pointer;
+    position: relative;top: -20vh;
+    position: relative;left: 70vh;
+}
+   
+
+    .Project-text{
+    position: relative;top: -450vh;
+    position: relative;left: 83vh;
+   }
+
+
+.recent2{
+    position: absolute;top: 38vh;
+    position: absolute;left: 195vh;
+    cursor: pointer;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.recent3{
+    position: absolute;top: 70vh;
+    position: absolute;left: 195vh;
+    cursor: pointer;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.favicon2{
+    scale: 0.7;
+}
+
+.git2{
+    position: relative;top: -19vh;
+    background-color: #cec7c7;
+    padding: 3px 3px;
+    border-radius: 30px;
+}
+
+.mistake{
+    position: relative;top: -17vh;
+}
+.mistake2{
+    position: relative;top: -17vh;
+    font-size: 60px;
+    
+}
+  </style>
+
+</head>
+<body>
+
+  
+  <div class="navbar">
+  <div class="navbar-left">
+  
+  <img src="hii.svg" alt="Logo" style="width: 24px; height: 24px;">
+  <h2 class="slash">/</h2>
+  <div class="circle"></div> 
+
+  <h2>Replica's Project </h2>
+  <h2 class="Hobby">Hobby</h2>
+  <img src="up-down-arrow.svg" alt="Logo" style="width: 24px; height: 24px;">
+
+  <div class="navbar-right"> <input class="search" type="text" placeholder="      Find..." style="padding:5px 8px;   border:1px solid #ddd; border-radius:4px;">
+    <img class="iconsearch" src="searchicon.png" alt="Logo" style="width: 20px; height: 20px;">
+    <h2 class="Feedback">Feedback</h2>
+    <img src="bell-icon.svg" alt="Logo" style="width: 20px; height: 20px;">
+    <div class="circle2"></div> 
+    <img src="book.svg" alt="Logo" style="width: 18px; height: 18px;">
+    <div class="circle3"></div> 
+    <div class="circle"></div>
+     
+    </div> </div>
+</div>
+
+  </div>
+
+  
+  <div class="tabs">
+    <a href="#" class="active">Overview</a>
+    <a href="#">Integrations</a>
+    <a href="#">Deployments</a>
+    <a href="#">Activity</a>
+    <a href="#">Domains</a>
+    <a href="#">Usage</a>
+    <a href="#">Observability</a>
+    <a href="#">Storage</a>
+    <a href="#">Flags</a>
+    <a href="#">AI  Gateway</a>
+    <a href="#">Support</a>
+    <a href="#">Settings</a>
+  </div>
+  
+  <div class="main">
+  <input class="search" type="text" placeholder="Search Projects..." style="padding:10px 15px; margin:10px 0; border:1px solid #ddd; border-radius:6px; width: 150vh;">
+  <img src="filtericon.png" alt="filtericon" class="filtericon">
+  <div class="toolbar">
+  
+  <div class="toggle">
+    <img class="grid" src="grid-icon.svg" alt="grid-icon.svg">
+    <button>
+      ☰
+    </button>
+  </div>
+
+ 
+  <div class="dropdown">
+    <button class="dropbtn"> Add new ....<img  src="down-arrow.svg" alt=""></button>
+    <div class="dropdown-content">
+      <a href="#">Item 1</a>
+      <a href="#">Item 2</a>
+      <a href="#">Item 3</a>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+  
+  <div class="container">
+    
+    <div>
+        <h3>Usage</h3>
+      <div class="card">
+        <h3>Last 30 days</h3>
+        <h3 style="color: grey;">Updated 11m ago</h3>
+        
+        <div class="para"><p class="para1">Fast Data Transfer </p>
+        <p >Edge Requests </p>
+        <p class="para2">Edge Reguest CPU Duration  </p></div>
+        
+      </div>
+      
+
+      
+        <img class="Progress" src="Progress-circle.png" alt="Progress-circle.png">
+        <img class="Progress1" src="Progress-circle.png" alt="Progress-circle.png">
+        <img class="Progress2" src="Progress-circle.png" alt="Progress-circle.png">
+
+        <button class="Upgrade">Upgrade</button>
+        <p class="p1"> (773MB / 100GB)</p>
+        <p class="p2"> 6.6k  /1M</p>
+        <p class="p3"> 0s / 1h</p>
+        <img class="down-arrow" src="down-arrow.svg" alt="down-arrow.svg">
+        
+    
+
+        
+
+      <div class="projects">
+        <div class="project-card">
+            <img src="favicon1.svg" alt="favicon1.svg">
+          <h4>spark-2-k25-2-k26</h4>
+          <p>spark-2k25.vercel.app</p>
+          <p1><img src="github.svg" alt="github.svg"> Replica/Spark-2k25---2k26</p1>
+          <p2>Added README.md</p2>
+          <p3>Aug 20 on ****  main</p3>
+          <img  class="branch" src="branch.png" alt="branch.png"> 
+        </div>
+        <img class="heart-beart" src="heart-beart.svg" alt="heart-beart">
+        <div class="project-card1">
+            <img class="favicon2" src="favicon2.png" alt="favicon2.png">
+          <h4>jovian-responsive-page</h4>
+          <h5>jovian-responsive-page.vercel.app</h5>
+          <p5 class="git2"  ><img src="github.svg" alt="github.svg"> Replica/Spark-2k25---2k26</p5>
+          <img class="heart-beart2" src="heart-beart.svg" alt="heart-beart">
+          <p class="mistake">Fixed a mistake </p>
+          <p class="mistake2">6/27/24 on main</p>
+        </div>
+        <div class="project-card2">
+          <h4>profile</h4>
+          <p>Initial commit</p>
+        </div>
+      </div>
+    </div>
+
+    
+    <div>
+        <h3 class="recent">Recent Previews</h3>
+      <div class="card1">
+        <img class="eye" src="eye.png" alt="eye">
+        <p class="text" style="font-size:15px; color:#777;">Preview deployments that you recently visited or created will appear here...</p>
+      </div>
+    </div>
+  </div>
+
+  <h3 class="Project-text">Projects</h3>
+  <h3 class="recent2">...</h3>
+  <h3 class="recent3">...</h3>
+</body>
+</html>
